@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState, useMemo } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import '../styles/CircularProgressBar.css'
+import '../styles/CircularProgressBar.css';
 import Sidebar from './Sidebar';
-
 
 const CircularProgressBar = ({
   actualVoltage,
@@ -22,15 +22,18 @@ const CircularProgressBar = ({
   manufacturer,
 }) => {
   
-  const progressData = [
-    { name: 'Voltage', currentPercentage: actualVoltage, totalPercentage: ratedVoltage },
-    { name: 'Current', currentPercentage: actualCurrent, totalPercentage: ratedCurrent },
-    { name: 'RPM', currentPercentage: actualRPM, totalPercentage: ratedRPM },
-    { name: 'Torque', currentPercentage: actualTorque, totalPercentage: ratedTorque },
-    { name: 'Power', currentPercentage: actualPower, totalPercentage: ratedPower },
-    { name: 'Temperature', currentPercentage: actualTemperature },
-    { name: 'Humidity', currentPercentage: humidity },
-  ];
+  const progressData = useMemo(
+    () => [
+      { name: 'Voltage', currentPercentage: actualVoltage, totalPercentage: ratedVoltage },
+      { name: 'Current', currentPercentage: actualCurrent, totalPercentage: ratedCurrent },
+      { name: 'RPM', currentPercentage: actualRPM, totalPercentage: ratedRPM },
+      { name: 'Torque', currentPercentage: actualTorque, totalPercentage: ratedTorque },
+      { name: 'Power', currentPercentage: actualPower, totalPercentage: ratedPower },
+      { name: 'Temperature', currentPercentage: actualTemperature },
+      { name: 'Humidity', currentPercentage: humidity },
+    ],
+    [actualVoltage, ratedVoltage, actualCurrent, ratedCurrent, actualRPM, ratedRPM, actualTorque, ratedTorque, actualPower, ratedPower, actualTemperature, humidity]
+  );
 
   const [progressDetails, setProgressDetails] = useState(progressData.map(() => ({ currentPercentage: 0 })));
 
@@ -61,6 +64,7 @@ const CircularProgressBar = ({
       width="42px"
       height="42px"
       src="https://svgshare.com/i/10e7.svg"
+        alt="Logo"
         />
           <p className="mb-2 text-2xl font-semibold tracking-tight text-gray-900">{type}</p>
           <p className="mt-1 font-normal text-gray-500">Manufactured by {manufacturer}</p>
@@ -83,7 +87,6 @@ const CircularProgressBar = ({
                       styles={buildStyles({
                         textColor: '#000',
                         pathColor: '#4CAF50',
-                        textSize: '12px', // Adjust the size of the text
                       })}
                     />
                   ) : progressData[index].name === 'Humidity' ? (
@@ -93,7 +96,6 @@ const CircularProgressBar = ({
                       styles={buildStyles({
                         textColor: '#000',
                         pathColor: '#4CAF50',
-                        textSize: '12px', 
                       })}
                     />
                   ) : (
@@ -103,7 +105,6 @@ const CircularProgressBar = ({
                       styles={buildStyles({
                         textColor: '#000',  
                         pathColor: '#4CAF50',
-                        textSize: '12px', 
                       })}
                     />
                   )}

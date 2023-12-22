@@ -1,5 +1,3 @@
-// Sidebar.js
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiBarChart, FiMessageSquare } from "react-icons/fi";
@@ -75,7 +73,7 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold "></h1>
+        
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { ref,onValue } from 'firebase/database'
 import Battery from './pages/Battery';
 
 
-function Connect() {
+function Connection() {
 
   const [data,setData]=useState([]);
   useEffect(()=>{
@@ -45,4 +45,4 @@ function Connect() {
   );
 };
 
-export default Connect;
+export default Connection;
