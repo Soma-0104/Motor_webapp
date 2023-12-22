@@ -1,0 +1,38 @@
+/* Sidebar.css */
+
+.sidebar {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .menu {
+    /* background-color: #333; */
+    /* color: #fff; */
+    width: 200px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu ul li {
+    padding: 10px;
+  }
+  
+  .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu ul li a span {
+    margin-left: 10px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
