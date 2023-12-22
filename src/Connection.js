@@ -1,33 +1,8 @@
-// import React,{useEffect, useState} from 'react';
-// import 'react-circular-progressbar/dist/styles.css';
-// // import './src/pages/styles/CircularProgressBar.css'
-// import { rdb } from './firebaseConfig';
-// import { ref,onValue } from 'firebase/database'
-// // import CircularProgressBar from './pages/CircularProgressBar';
-// import Battery from './pages/Battery';
-// // import Battery from './pages/Battery';
 
-
-// function Connection() {
-
- 
- 
-//   return (  
-//    <>
-//     <Battery/>
-//    </>
-  
-  
-//   );
-// };
-
-// export default Connection;
 import React,{useEffect, useState} from 'react';
 import 'react-circular-progressbar/dist/styles.css';
-// import './src/pages/styles/CircularProgressBar.css'
 import { rdb } from './firebaseConfig';
 import { ref,onValue } from 'firebase/database'
-import CircularProgressBar from './pages/CircularProgressBar';
 import Battery from './pages/Battery';
 
 

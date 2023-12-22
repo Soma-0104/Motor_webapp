@@ -4,8 +4,6 @@ import 'react-circular-progressbar/dist/styles.css';
 import '../styles/CircularProgressBar.css'
 import Sidebar from './Sidebar';
 
-import { rdb } from '../firebaseConfig';
-import { ref,onValue } from 'firebase/database'
 
 const CircularProgressBar = ({
   actualVoltage,
@@ -35,7 +33,7 @@ const CircularProgressBar = ({
   ];
 
   const [progressDetails, setProgressDetails] = useState(progressData.map(() => ({ currentPercentage: 0 })));
-  const [data, setData]=useState([])
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,19 +48,7 @@ const CircularProgressBar = ({
         })
       );
     }, 5);
-    // const dbase = () => {
-    //   const databaseRef = ref(rdb, 'motordata/');
-    //   onValue(databaseRef,(snapshot)=>{
-    //     const adata=snapshot?.val();
-    //     const motorData = Object.keys(adata).map(key => ({
-    //       id: key,
-    //       ...adata[key] 
-    //    }));
-    //    setData(motorData);
-    //   })
-      
-    // }
-    // () => dbase();
+    
     return () => clearInterval(interval);
   }, [progressData]);
 

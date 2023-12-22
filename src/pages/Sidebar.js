@@ -22,13 +22,13 @@ const Sidebar = () => {
         } bg-green-200 h-full p-5  pt-8 relative duration-300 font-bold`}
       >
         <img
-          src={control}
+          src={control} alt="logo"
           className={`absolute cursor-pointer -right-3 top-9 w-7 bg-cyan-700
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
         <div className="flex gap-x-4 items-center">
-          <img
+          <img alt="logo"
             src={logo}
             className={`cursor-pointer duration-500 ${
               open && "rotate-[360deg]"
