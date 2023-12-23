@@ -1,17 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Sidebar from './pages/Sidebar';
+
 import Connect from './Connect';
 import Connection from './Connection';
+
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route path="/connect" component={Connect} />
+
           <Route path="/connection" component={Connection} />
-          <Route path="/" component={Sidebar} />
+          <Route path="/" component={Connect} />
          
         </Switch>
       </div>

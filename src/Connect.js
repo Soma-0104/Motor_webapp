@@ -37,7 +37,8 @@ function Connect() {
     actualTemperature={Math.floor(item.temperature)}
     humidity={item.humidity}
     type={item.Type}
-    manufacturer={item.manufacturer}/>
+    manufacturer={item.manufacturer}
+    maintenance={item.maintenance}/>
     </div>
     )
       })

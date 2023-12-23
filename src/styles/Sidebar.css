@@ -1,13 +1,9 @@
-/* Sidebar.css */
-
 .sidebar {
     display: flex;
     height: 100vh;
   }
   
   .menu {
-    /* background-color: #333; */
-    /* color: #fff; */
     width: 200px;
   }
   
